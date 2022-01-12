@@ -6,7 +6,7 @@ require "dependabot/gitlab_ci/file_fetcher"
 require "dependabot/gitlab_ci/file_parser"
 require "dependabot/gitlab_ci/update_checker"
 require "dependabot/gitlab_ci/file_updater"
-###  require "dependabot/git_submodules/metadata_finder"
+require "dependabot/gitlab_ci/metadata_finder"
 ###  require "dependabot/git_submodules/requirement"
 ###  require "dependabot/git_submodules/version"
 
