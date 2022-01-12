@@ -29,4 +29,4 @@ module Dependabot
   end
 end
 
-Dependabot::FileFetchers.register("gitlab-ci", Dependabot::GitSubmodules::FileFetcher)
+Dependabot::FileFetchers.register("gitlab-ci", Dependabot::GitlabCi::FileFetcher)
