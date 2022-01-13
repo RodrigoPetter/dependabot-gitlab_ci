@@ -38,7 +38,7 @@ module Dependabot
 
       def fetch_latest_version
         # TODO: Deve usar os dados descobertos pelo file_parser para buscar a última tag do projeto que é feito a referência
-        "v2.8.9"
+        Version.new("2.9.4")        
       end
     end
   end

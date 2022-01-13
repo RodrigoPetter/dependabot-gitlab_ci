@@ -11,23 +11,24 @@ module Dependabot
       require "dependabot/file_parsers/base/dependency_set"
 
       #At the moment it only works on files with one include
-      INCLUDE_WITH_REF = /^include:(.|\n)*project: '(?<project>.*)'(.|\n)*ref: (?<version>\S*)/mi.freeze
+      INCLUDE_WITH_REF = /^include:(.|\n)*project: '(?<project>.*)'(.|\n)*ref: (v)?(?<version>\S*)/mi.freeze
 
       def parse
         dependency_set = DependencySet.new
         
         if INCLUDE_WITH_REF.match?(gitlabcifile.content)
-          parsed_from_file = INCLUDE_WITH_REF.match?(gitlabcifile.content).named_captures
+          
+          parsed_from_file = INCLUDE_WITH_REF.match(gitlabcifile.content).named_captures
 
           dependency_set << Dependency.new(
-            name: "include",
+            name: "gitlab-ci include keyword",
             version: parsed_from_file["version"],
             package_manager: "gitlab-ci",
             requirements: [
               requirement: nil,
               groups: [],
               file: gitlabcifile.name,
-              source: parsed_from_file['project']
+              source: { project: parsed_from_file['project'] }
             ]
           )
         end

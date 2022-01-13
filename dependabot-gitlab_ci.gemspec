@@ -4,7 +4,7 @@ Gem::Specification.new do |spec|
 
   spec.name         = "dependabot-gitlab_ci"
   spec.summary      = "Add support to gitlab-ci.yml file for dependabot-core"
-  spec.version      = "0.0.0"
+  spec.version      = "1.0.0"
 
   spec.author       = "Rodrigo Petter Daniel"
   spec.homepage     = "https://github.com/RodrigoPetter/dependabot-gitlab-ci"

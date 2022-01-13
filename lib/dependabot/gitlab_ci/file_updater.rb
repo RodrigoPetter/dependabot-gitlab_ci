@@ -27,6 +27,10 @@ module Dependabot
         # will only ever be updating a single dependency
         dependencies.first
       end
+
+      def check_required_files
+        nil
+      end
       
     end
   end
