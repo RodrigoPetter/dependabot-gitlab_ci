@@ -16,13 +16,7 @@ module Dependabot
       def parse
         dependency_set = DependencySet.new
         
-        aaa = gitlabcifile.content
-        puts(aaa)
-
-        puts('vai ifar')
-        puts(INCLUDE_WITH_REF.match?(aaa))
-        puts('vai ifar')
-        if INCLUDE_WITH_REF.match?(aaa)
+        if INCLUDE_WITH_REF.match?(gitlabcifile.content)
           
           parsed_from_file = INCLUDE_WITH_REF.match(gitlabcifile.content).named_captures
 
