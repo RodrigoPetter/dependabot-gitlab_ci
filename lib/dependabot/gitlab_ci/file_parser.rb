@@ -10,8 +10,8 @@ module Dependabot
     class FileParser < Dependabot::FileParsers::Base
       require "dependabot/file_parsers/base/dependency_set"
 
-      #At the moment it only works on files with one include
-      INCLUDE_WITH_REF = /^include:(\s|\n|-)+project: '(?<project>.*)'(\s|\n|-)+ref: (v)?(?<version>\S+)/mi.freeze
+      #At the moment it only works with files with one include
+      INCLUDE_WITH_REF = /^include:(\s|\n|-)+project: '?(?<project>.*)'?(\s|\n|-)+ref: (v)?(?<version>\S+)/mi.freeze
 
       def parse
         dependency_set = DependencySet.new
